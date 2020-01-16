@@ -15,7 +15,8 @@ struct ContentView: View {
             Button("Open") {
                 self.presentSheet.toggle()
             }
-            SearchUsersView(filter: $filter)
+            TextField("Find user...", text: $filter)
+            UserFilter(filter: $filter)
         }
         .sheet(isPresented: $presentSheet) {
             SearchUsersView(filter: self.$filter).environmentObject(self.dataSource)

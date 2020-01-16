@@ -11,7 +11,6 @@ struct SearchUsersView: View {
     
     var body: some View {
         VStack {
-            TextField("Find user...", text: $filter)
             List(users) { user in
                 Text(user.name)
             }
